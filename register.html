@@ -1,0 +1,12 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Register | ParkEasy</title><link rel="stylesheet" href="/static/style.css">
+<script src="/static/auth.js" defer></script></head>
+<body><header class="topbar"><div class="container nav"><a class="brand" href="/"><span class="brand-mark">P</span> Park<span class="accent">Easy</span></a><a href="/">← Back to Home</a></div></header>
+<main class="form-container"><div class="form-card"><h1>Create Account</h1><p class="muted">Store your bookings in the SQLite database.</p>
+<form id="authForm" data-mode="register">
+<label>Your name<input type="text" id="name" required minlength="2" autocomplete="name"></label>
+<label>Email<input type="email" id="email" required autocomplete="email"></label>
+<label>Password (8 characters minimum)<input type="password" id="password" required minlength="8" autocomplete="new-password"></label>
+<button type="submit" class="button full">Register</button>
+</form><p id="message" class="error" role="status"></p><p>Have an account? <a href="/login">Login</a></p></div></main></body></html>

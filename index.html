@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ParkEasy | Smart Parking Ahmedabad</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="/"><span class="brand-mark">P</span> Park<span class="accent">Easy</span></a>
+      <nav><a href="#parking">Explore spaces</a><a href="#prediction">Insights</a><a href="#bookings">My bookings</a></nav>
+      <div id="accountLinks"><a href="/login" class="button outline small">Login</a><a href="/register" class="button small">Register</a></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="tag"><span class="status-dot"></span> AHMEDABAD SMART PARKING</span>
+          <h1>Your space.<br><span class="gradient-text">Less searching.</span></h1>
+          <p>Discover available bike and car parking across Ahmedabad, see transparent pricing and reserve your spot in a few clicks.</p>
+          <div class="hero-actions"><a href="#parking" class="button">Explore parking spaces <span aria-hidden="true">↗</span></a><a href="#prediction" class="text-link">View availability insights →</a></div>
+          <p class="hero-disclaimer">College prototype · 48 illustrative Ahmedabad locations · no live sensor data</p>
+        </div>
+        <div class="hero-visual" aria-label="ParkEasy product overview">
+          <div class="visual-kicker">PARKING OVERVIEW <span class="live-chip">● Sample data</span></div>
+          <div class="visual-icon">⌁ <span>🅿</span></div>
+          <div class="visual-title">Park smarter, not harder.</div>
+          <div class="visual-subtitle">Find it. Reserve it. Park easy.</div>
+          <div class="visual-mini-grid"><div><small>LOCATIONS</small><strong>48</strong></div><div><small>VEHICLE TYPES</small><strong>02</strong></div><div><small>BOOKING</small><strong>24/7</strong></div></div>
+        </div>
+      </div>
+    </section>
+    <section class="container section" id="parking">
+      <div class="section-eyebrow">EXPLORE AHMEDABAD</div><h2>Find your next parking spot</h2>
+      <p class="muted">Explore 48 parking locations around Ahmedabad. Search or choose an area to see bike and car parking options.</p>
+      <div class="filter-box">
+        <label>Search area or parking name<input id="search" placeholder="e.g. Vastrapur, CG Road" autocomplete="off"></label>
+        <label>Select Ahmedabad area<select id="areaFilter"><option value="all">All areas</option></select></label>
+        <label>Vehicle type<select id="vehicle"><option value="2W">2-Wheeler (Bike)</option><option value="4W">4-Wheeler (Car)</option></select></label>
+        <label>Availability<select id="availability"><option value="all">All locations</option><option value="available">Available only</option></select></label>
+        <button id="clearFilters" class="button outline" type="button">Clear</button>
+      </div>
+      <div class="summary" id="summary">Loading parking locations...</div>
+      <div class="card-grid" id="parkingCards"></div>
+    </section>
+
+    <section class="section light" id="prediction">
+      <div class="container">
+        <div class="section-eyebrow">DATA INSIGHTS</div><h2>Availability, made clear.</h2>
+        <p class="muted">Explore the share of spaces currently free in our sample dataset. Compare locations and find the best options at a glance.</p>
+        <div class="insight-stats">
+          <div class="insight-stat"><span>FREE SPACES</span><strong id="statFree">—</strong><small>Across all 48 locations</small></div>
+          <div class="insight-stat"><span>TOTAL SPACES</span><strong id="statTotal">—</strong><small>Selected vehicle category</small></div>
+          <div class="insight-stat highlight-stat"><span>OVERALL AVAILABILITY</span><strong id="statPercent">—</strong><small>Free ÷ total × 100</small></div>
+        </div>
+        <div class="insight-layout">
+          <div class="graph-panel">
+            <div class="graph-heading"><div><span class="section-eyebrow">TOP 10 LOCATIONS</span><h3>Parking availability</h3></div><span id="graphVehicle" class="chart-vehicle">2-Wheeler (Bike)</span></div>
+            <div class="chart-legend"><span><i class="legend-dot"></i> Free spaces (%)</span><span>Higher = more availability</span></div>
+            <div id="probabilityGraph" class="probability-graph" aria-label="Parking availability by location"></div>
+            <p id="graphNote" class="muted graph-note"></p>
+          </div>
+          <aside class="insight-aside">
+            <div class="aside-icon">↗</div><span class="section-eyebrow">HOW IT WORKS</span><h3>Numbers you can understand.</h3>
+            <p>Each percentage comes from available spaces divided by total capacity for that vehicle type.</p>
+            <div id="estimateExample" class="formula">Calculating availability…</div>
+            <div class="aside-rule"></div><strong>Important context</strong><p class="muted">These figures describe stored sample availability. They are <b>not</b> real-time sensor measurements or a guaranteed future probability.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section" id="bookings">
+      <div class="section-eyebrow">YOUR ACTIVITY</div><h2>My bookings</h2>
+      <p class="muted"></p>
+      <div id="bookingArea" class="bookings-list">Please log in to view bookings.</div>
+    </section>
+
+    <section class="section light" id="process">
+      <div class="container">
+        <div class="section-eyebrow">BEHIND THE PROJECT</div><h2>Our design thinking process</h2>
+        <div class="steps">
+          <div><strong>1. Empathize</strong><p>Ask drivers about parking problems and wasted time.</p></div>
+          <div><strong>2. Define</strong><p>People do not know where spaces are free before arriving.</p></div>
+          <div><strong>3. Ideate</strong><p>Design search, availability details, and booking features.</p></div>
+          <div><strong>4. Prototype</strong><p>Make a website using HTML, CSS, JS, Python, and SQLite.</p></div>
+          <div><strong>5. Test</strong><p>Try bookings and cancellations; ask classmates for feedback.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container">© ParkEasy Ahmedabad · Built for a college project · Simulated parking data & payments</div></footer>
+</body>
+</html>

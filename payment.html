@@ -1,0 +1,42 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Secure-style Demo Checkout | ParkEasy</title><link rel="stylesheet" href="/static/style.css">
+<script src="/static/payment.js" defer></script></head>
+<body>
+<header class="topbar"><div class="container nav"><a class="brand" href="/"><span class="brand-mark">P</span> Park<span class="accent">Easy</span></a><a href="/#parking" class="text-link">← Back to parking</a></div></header>
+<main class="checkout-page"><div class="container"><div class="checkout-heading"><span class="section-eyebrow">CHECKOUT · STEP 2 OF 2</span><h1>Confirm your parking</h1><p class="muted">Review your reservation, choose a demo payment method, and receive your confirmation.</p></div>
+<div class="checkout-grid">
+  <section class="form-card checkout-main">
+    <div class="checkout-step"><span class="step-bubble">01</span><h2>Vehicle information</h2></div>
+    <p id="selectionInfo" class="muted">Loading your selected parking...</p>
+    <form id="paymentForm">
+      <label for="numberPlate">Registration number<input id="numberPlate" name="number_plate" type="text" placeholder="GJ01AB1234" maxlength="15" required autocomplete="off" pattern="[A-Za-z0-9 -]{7,15}" title="Example: GJ01AB1234" style="text-transform:uppercase"></label>
+      <p class="field-help">Use the number on your bike or car registration plate.</p>
+      <label for="hours">Parking duration<select id="hours"><option value="1">1 hour</option><option value="2">2 hours</option><option value="3">3 hours</option><option value="4">4 hours</option><option value="5">5 hours</option><option value="6">6 hours</option><option value="7">7 hours</option><option value="8">8 hours</option></select></label>
+      <div class="checkout-step second-step"><span class="step-bubble">02</span><h2>Choose payment method</h2></div>
+      <div class="payment-methods" role="radiogroup" aria-label="Payment method">
+        <label class="method-card selected"><input type="radio" name="method" value="Demo UPI" checked><span class="method-icon">₹</span><span><strong>UPI</strong><small>Simulated payment · no PIN</small></span><span class="radio-indicator"></span></label>
+        <label class="method-card"><input type="radio" name="method" value="Demo Card"><span class="method-icon">▣</span><span><strong>Debit / Credit card</strong><small>Simulated payment · no card details</small></span><span class="radio-indicator"></span></label>
+        <label class="method-card"><input type="radio" name="method" value="Cash at parking"><span class="method-icon">▤</span><span><strong>Pay at parking</strong><small>Amount due on arrival · simulated booking</small></span><span class="radio-indicator"></span></label>
+      </div>
+      <div class="payment-preview" id="paymentPreview"><span class="preview-icon">✓</span><span>UPI simulation — your booking will be marked <b>Demo paid</b>. No actual payment is processed.</span></div>
+      <div class="notice">Academic demonstration only. No live payment gateway or real-world parking reservation. Never enter UPI PIN, card details or banking credentials.</div>
+      <button type="submit" class="button full" id="confirmButton">Confirm demo payment · ₹0</button>
+      <p class="centered-footnote">A confirmation number and receipt will appear after booking.</p>
+    </form>
+    <div id="message" role="status" aria-live="polite"></div>
+  </section>
+  <aside class="order-summary"><div class="order-heading"><span class="section-eyebrow">YOUR RESERVATION</span><h2>Order summary</h2></div>
+    <div class="order-location-icon">🅿</div><h3 id="orderPlace">Loading location…</h3><p id="orderArea" class="muted"></p>
+    <div class="order-divider"></div>
+    <div class="order-line"><span>Vehicle</span><strong id="orderVehicle">—</strong></div>
+    <div class="order-line"><span>Hourly rate</span><strong id="orderRate">—</strong></div>
+    <div class="order-line"><span>Duration</span><strong id="orderDuration">1 hour</strong></div>
+    <div class="order-line"><span>Available spaces</span><strong id="orderSpaces">—</strong></div>
+    <div class="order-divider"></div>
+    <div class="order-line total-line"><span>Total amount</span><strong id="totalAmount">₹0</strong></div>
+    <p class="order-caption">No extra fees · all values are illustrative</p>
+  </aside>
+</div></div></main>
+<footer><div class="container">© ParkEasy Ahmedabad · College demonstration · No real payments processed</div></footer>
+</body></html>
