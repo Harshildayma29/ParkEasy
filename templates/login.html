@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login | ParkEasy</title><link rel="stylesheet" href="/static/style.css">
+<script src="/static/auth.js" defer></script></head>
+<body><header class="topbar"><div class="container nav"><a class="brand" href="/"><span class="brand-mark">P</span> Park<span class="accent">Easy</span></a><a href="/">← Back to Home</a></div></header>
+<main class="form-container"><div class="form-card">
+<h1>Login</h1><p class="muted">Sign in to book parking.</p>
+<form id="authForm" data-mode="login">
+<label>Email<input type="email" id="email" required autocomplete="email"></label>
+<label>Password<input type="password" id="password" required autocomplete="current-password"></label>
+<button type="submit" class="button full">Login</button>
+</form><p id="message" class="error" role="status"></p>
+<p>New user? <a href="/register">Create an account</a></p></div></main></body></html>
